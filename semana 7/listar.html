@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <div clas="container-fluid">
+  <div class="container-fluid">
 
     <header>
       <!-- place navbar here -->
@@ -62,37 +62,37 @@
     <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
       Launch
     </button>
-    
+
     <!-- Modal -->
     <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalTitleId">Modal title</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
           <div class="modal-body">
             <div class="container-fluid">
               <div>
                 <div class="mb-3">
                   <label for="" class="form-label">Nombre</label>
-                  <input type="text"
-                    class="form-control" name="nombre" id="Nombre" aria-describedby="helpId" placeholder="Nombre del curso">
+                  <input type="text" class="form-control" name="nombre" id="Nombre" aria-describedby="helpId"
+                    placeholder="Nombre del curso">
                   <small id="helpId" class="form-text text-muted">Ingresar el nomre del curso</small>
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Descripcion</label>
-                    <input type="text"
-                      class="form-control" name="Descripcion" id="Decripcion" aria-describedby="helpId" placeholder="Descripcio del curso">
-                    <small id="helpId" class="form-text text-muted">Ingresar la Descripcion del curso</small>
-                  </div>
-                  <div class="mb-3">
-                    <label for="" class="form-label">Tiempo</label>
-                    <input type="text"
-                      class="form-control" name="tiempo" id="tiempo" aria-describedby="helpId" placeholder="tiempo del curso">
-                    <small id="helpId" class="form-text text-muted">Ingresar el tiempo del curso</small>
-                  </div>
-            </div>
+                  <label for="" class="form-label">Descripcion</label>
+                  <input type="text" class="form-control" name="Descripcion" id="Decripcion" aria-describedby="helpId"
+                    placeholder="Descripcio del curso">
+                  <small id="helpId" class="form-text text-muted">Ingresar la Descripcion del curso</small>
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Tiempo</label>
+                  <input type="text" class="form-control" name="tiempo" id="tiempo" aria-describedby="helpId"
+                    placeholder="tiempo del curso">
+                  <small id="helpId" class="form-text text-muted">Ingresar el tiempo del curso</small>
+                </div>
+              </div>
             </div>
           </div>
           <div class="modal-footer">
@@ -102,30 +102,30 @@
         </div>
       </div>
     </div>
-    
+
     <script>
       var modalId = document.getElementById('modalId');
-    
+
       modalId.addEventListener('show.bs.modal', function (event) {
-          // Button that triggered the modal
-          let button = event.relatedTarget;
-          // Extract info from data-bs-* attributes
-          let recipient = button.getAttribute('data-bs-whatever');
-    
+        // Button that triggered the modal
+        let button = event.relatedTarget;
+        // Extract info from data-bs-* attributes
+        let recipient = button.getAttribute('data-bs-whatever');
+
         // Use above variables to manipulate the DOM
       });
     </script>
-    
-    
-  
+
+
+
     <!-- Modal -->
     <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalTitleId">Modal title</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
           <div class="modal-body">
             <div class="container-fluid">
               Add rows here
@@ -138,20 +138,20 @@
         </div>
       </div>
     </div>
-    
+
     <script>
       var modalId = document.getElementById('modalId');
-    
+
       modalId.addEventListener('show.bs.modal', function (event) {
-          // Button that triggered the modal
-          let button = event.relatedTarget;
-          // Extract info from data-bs-* attributes
-          let recipient = button.getAttribute('data-bs-whatever');
-    
+        // Button that triggered the modal
+        let button = event.relatedTarget;
+        // Extract info from data-bs-* attributes
+        let recipient = button.getAttribute('data-bs-whatever');
+
         // Use above variables to manipulate the DOM
       });
     </script>
-    
+
 
     <!-- Modal -->
     <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
@@ -239,18 +239,83 @@
       }
     }
 
-    function editar(id, nombre, descripcion, tiempo) {
-      alert('' + nombre);
-      myModal.show();
-      document.getElementById('nombre').value=nombre;
+    // function editar(id, nombre, descripcion, tiempo) {
+    //   alert('' + nombre);
+    //   myModal.show();
+    //   document.getElementById('nombre').value=nombre;
 
-    }
+    // }
+
+    // ********************************************************************
+    const myModal = new bootstrap.Modal(document.getElementById('modalId'));
+
+  function Editar(id, nombre, descripcion, tiempo, usuario) {
+    myModal.show();
+    document.getElementById("cursoId").value = id;
+    document.getElementById('nombre').value = nombre;
+    document.getElementById('descripcion').value = descripcion;
+    document.getElementById('tiempo').value = tiempo;
+    document.getElementById('tiempo').value = usuario;
+  }
+
 
     function eliminar() {
       alert('eliminar');
     }
 
     cargarDatos();
+
+
+    // const myModal = new bootstrap.Modal(document.getElementById('modalId'));
+
+    //   function Editar(id, nombre, descripcion, tiempo, usuario) {
+    //     myModal.show();
+    //     document.getElementById("cursoId").value = id;
+    //     document.getElementById('nombre').value = nombre;
+    //     document.getElementById('descripcion').value = descripcion;
+    //     document.getElementById('tiempo').value = tiempo;
+    //     document.getElementById('tiempo').value = usuario;
+
+
+    //   }
+
+    //   var formulario = document.getElementById('formulario');
+    //   formulario.addEventListener('submit', function (e) {
+    //     alert('SALVANDO');
+    //     e.preventDefault()
+
+    //     nombre = document.getElementById('nombre').value;
+    //     descripcion = document.getElementById('descripcion').value;
+    //     tiempo = document.getElementById('tiempo').value;
+    //     id = document.getElementById('cursoId').value;
+    //     usuario = document.getElementById('usuario').value;
+
+    //     var datosEnviar = {
+    //       id: id,
+    //       nombre: nombre,
+    //       descripcion: descripcion,
+    //       tiempo: tiempo,
+    //       usuario: usuario
+    //     };
+    //     console.log(datosEnviar);
+
+    //     fetch("https://paginas-web-cr.com/ApiPHP/apis/ActualizarCursos.php",
+    //       {
+    //         method: 'POST',
+    //         body: JSON.stringify(datosEnviar)
+    //       })
+    //       .then(respuesta => respuesta.json())//recibe los datos en formato json
+    //       .then((datosrespuesta) => {
+    //         console.log('Datos', datosrespuesta)
+    //         myModal.hide();
+    //         contenidoTablaResultado.innerHTML = "";
+    //         cargarDatos();
+    //       })
+    //       .catch(console.log)//Muestra los errores en el proceso si los hubo
+
+
+    //   });
+
   </script>
 </body>
 

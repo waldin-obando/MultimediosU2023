@@ -82,7 +82,59 @@
                 }
             }
 
+            // ****************************************************************
+            const myModal = new bootstrap.Modal(document.getElementById('modalId'));
+
+      function Editar(id, nombre, descripcion, tiempo, usuario) {
+        myModal.show();
+        document.getElementById("cursoId").value = id;
+        document.getElementById('nombre').value = nombre;
+        document.getElementById('descripcion').value = descripcion;
+        document.getElementById('tiempo').value = tiempo;
+        document.getElementById('tiempo').value = usuario;
+
+
+      }
+
+      var formulario = document.getElementById('formulario');
+      formulario.addEventListener('submit', function (e) {
+        alert('SALVANDO');
+        e.preventDefault()
+
+        nombre = document.getElementById('nombre').value;
+        descripcion = document.getElementById('descripcion').value;
+        tiempo = document.getElementById('tiempo').value;
+        id = document.getElementById('cursoId').value;
+        usuario = document.getElementById('usuario').value;
+
+        var datosEnviar = {
+          id: id,
+          nombre: nombre,
+          descripcion: descripcion,
+          tiempo: tiempo,
+          usuario: usuario
+        };
+        console.log(datosEnviar);
+
+        fetch("https://paginas-web-cr.com/ApiPHP/apis/ActualizarCursos.php",
+          {
+            method: 'POST',
+            body: JSON.stringify(datosEnviar)
+          })
+          .then(respuesta => respuesta.json())//recibe los datos en formato json
+          .then((datosrespuesta) => {
+            console.log('Datos', datosrespuesta)
+            myModal.hide();
+            contenidoTablaResultado.innerHTML = "";
             cargarDatos();
+          })
+          .catch(console.log)//Muestra los errores en el proceso si los hubo
+
+
+      });
+
+
+            // cargarDatos();
         </script>
 </body>
 
