@@ -161,7 +161,7 @@
     //[{"id":"377","nombre":"hola leo","descripcion":"sdsd","tiempo":"asasa"},
     function cargarDatos() {
       //alert('Cargue datos');
-      fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaProfesores.php")//url de peticion de datos
+      fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaCurso.php")//url de peticion de datos
         .then(respuesta => respuesta.json())//recibe los datos en formato json
         .then((datosrepuesta) => {
           steTabla(datosrepuesta.data)//lo envio para la funcion para darle tratamiento
